@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.ipynb_checkpoints/
+*.log
+.DS_Store
+
+# Keep generated artifacts tracked when the workflow commits them.
+# dashboards/*.pbix

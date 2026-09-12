@@ -1,0 +1,9 @@
+Order_Date,Customer_ID,Category,Region,Units_Sold,Unit_Price,Discount_Pct,Shipping_Cost,Total_Revenue,Net_Profit,Churn,Profit_Margin_Pct,Churn_Risk_Score
+2026-09-01,C001,Electronics,North,2,499.99,10,12.5,899.98,180.0,0,20.0,27.9
+2026-09-01,C002,Home,West,3,120.0,5,8.0,342.0,82.0,0,23.98,17.9
+2026-09-02,C003,Beauty,South,1,75.0,0,5.0,75.0,21.0,1,28.0,85.4
+2026-09-02,C004,Electronics,East,1,899.0,15,15.0,764.15,155.0,0,20.28,55.4
+2026-09-03,C001,Home,North,4,45.0,10,7.5,162.0,39.0,0,24.07,27.9
+2026-09-03,C005,Beauty,West,2,60.0,5,4.0,114.0,28.0,1,24.56,67.9
+2026-09-04,C002,Home,West,2,80.0,10,6.0,144.0,34.0,0,23.61,17.9
+2026-09-04,C006,Electronics,South,1,249.0,0,10.0,249.0,55.0,0,22.09,30.4

@@ -1,0 +1,5 @@
+Order_Date,Revenue,Profit,AOV,Active_Customers,Orders,Units_Sold,Profit_Margin_Pct,High_Risk_Customers,Revenue_7D_Rolling,Profit_7D_Rolling,Revenue_Weekly_Rolling
+2026-09-01,1241.98,262.0,620.99,2,2,5,21.1,0,1241.98,262.0,1241.98
+2026-09-02,839.15,176.0,419.575,2,2,2,20.97,1,2081.13,438.0,1040.56
+2026-09-03,276.0,67.0,138.0,2,2,6,24.28,1,2357.13,505.0,785.71
+2026-09-04,393.0,89.0,196.5,2,2,3,22.65,0,2750.13,594.0,687.53

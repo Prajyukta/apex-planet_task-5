@@ -1,0 +1,39 @@
+name: Daily Retail Analytics Pipeline
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-analytics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run ETL and KPI refresh
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EXECUTIVE_EMAIL_TO: ${{ secrets.EXECUTIVE_EMAIL_TO }}
+          EXECUTIVE_EMAIL_FROM: ${{ secrets.EXECUTIVE_EMAIL_FROM }}
+        run: python scripts/automated_pipeline.py --notify
+      - name: Commit refreshed artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed/master_cleaned_data.csv data/processed/daily_kpi_summary.csv
+          git diff --cached --quiet || git commit -m "chore: refresh daily analytics artifacts"
+          git push
