@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexPlanet E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        </nav>
+        <button class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to ApexPlanet Shop</h1>
+            <p>Your one-stop store for eco-friendly and sustainable products</p>
+            <a href="#shop" class="shop-now-btn">Shop Now</a>
+        </div>
+    </section>
+
+
+    <main>
+        <section id="shop" class="products-section">
+            <h2>Featured Products</h2>
+            <div class="products" id="product-list"></div>
+        </section>
+
+
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>ApexPlanet is dedicated to bringing you sustainable, eco-friendly, and innovative lifestyle products. Our
+                mission is to promote greener choices for a better future.</p>
+        </section>
+
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Email: support@apexplanet.com</p>
+            <p>Phone: +91-9876543210</p>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>© 2025 ApexPlanet. All rights reserved.</p>
+    </footer>
+    <aside class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button onclick="toggleCart()">X</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <p>Total: ₹<span id="cartTotal">0</span></p>
+            <button class="checkout-btn" onclick="showCheckout()">Checkout</button>
+        </div>
+        <form class="checkout-form" id="checkoutForm" onsubmit="submitOrder(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="address" placeholder="Shipping Address" required>
+            <button class="submit-order">Submit Order</button>
+        </form>
+        <div class="success-message" id="successMessage">✅ Order Placed Successfully!</div>
+    </aside>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
